@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <header>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.svg" alt="Лого на фирмата"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Начало</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="order.html">Форма за покупка</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Форма за покупка</h1>
+    <p>Попълнете полетата по-долу, за да изпратите вашата поръчка.</p>
+ 
+    <!-- novalidate изключва стандартните мехурчета на браузъра,
+         за да правим проверката сами с JavaScript и да показваме
+         нашите цветове за грешка -->
+    <form class="forma" id="formaPokupka" novalidate>
+ 
+      <div class="pole">
+        <label for="ime">Име на клиента</label>
+        <input type="text" id="ime" name="ime" required>
+      </div>
+ 
+      <div class="pole">
+        <label for="email">Имейл</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+ 
+      <div class="pole">
+        <label for="artikul">Артикул</label>
+        <select id="artikul" name="artikul" required>
+          <option value="">Изберете артикул</option>
+          <option value="Артикул едно">Артикул едно</option>
+          <option value="Артикул две">Артикул две</option>
+          <option value="Артикул три">Артикул три</option>
+          <option value="Артикул четири">Артикул четири</option>
+        </select>
+      </div>
+ 
+      <div class="pole">
+        <label for="kolichestvo">Количество</label>
+        <input type="number" id="kolichestvo" name="kolichestvo" min="1" required>
+      </div>
+ 
+      <button type="submit" class="butoni-poracaj">Поръчай</button>
+ 
+      <!-- съобщението е скрито, показва се при правилно попълване -->
+      <div class="uspeh" id="uspeh">Благодаря, вашата поръчка е приета.</div>
+ 
+    </form>
+  </main>
+ 
+  <footer>
+    Примерен фирмен сайт, изработен като учебен проект.
+  </footer>
+ 
+  <!-- ===== JAVASCRIPT: проверка на формата ===== -->
+  <script>
+    // Хващаме формата и съобщението за успех по техните id.
+    var forma = document.getElementById("formaPokupka");
+    var uspeh = document.getElementById("uspeh");
+ 
+    // Слушаме за натиснат бутон Поръчай.
+    forma.addEventListener("submit", function (event) {
+      event.preventDefault();  // спираме изпращането, за да проверим сами
+ 
+      // Вземаме полетата.
+      var ime = document.getElementById("ime");
+      var email = document.getElementById("email");
+      var artikul = document.getElementById("artikul");
+      var kolichestvo = document.getElementById("kolichestvo");
+ 
+      var imaGreshka = false;
+ 
+      // Изчистваме старите червени маркировки преди новата проверка.
+      [ime, email, artikul, kolichestvo].forEach(function (pole) {
+        pole.classList.remove("greshka");
+      });
+      uspeh.style.display = "none";
+ 
+      // Името не може да е празно.
+      if (ime.value.trim() === "") {
+        ime.classList.add("greshka");
+        imaGreshka = true;
+      }
+ 
+      // Имейлът трябва да е във валиден формат.
+      // checkValidity проверява дали отговаря на type="email".
+      if (!email.checkValidity() || email.value.trim() === "") {
+        email.classList.add("greshka");
+        imaGreshka = true;
+      }
+ 
+      // Трябва да е избран артикул.
+      if (artikul.value === "") {
+        artikul.classList.add("greshka");
+        imaGreshka = true;
+      }
+ 
+      // Количеството трябва да е поне 1.
+      if (kolichestvo.value === "" || Number(kolichestvo.value) < 1) {
+        kolichestvo.classList.add("greshka");
+        imaGreshka = true;
+      }
+ 
+      // Ако всичко е наред, показваме съобщението за успех.
+      if (!imaGreshka) {
+        uspeh.style.display = "block";
+        forma.reset();  // изчиства полетата
+      }
+    });
+  </script>
+
+</body>
+</html>

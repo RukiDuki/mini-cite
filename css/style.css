@@ -1,0 +1,257 @@
+/*Смени цветовете*/
+:root {
+    --cvyat-fon: #f7f5f2;      /* фон на цялата страница */
+  --cvyat-osnoven: #2f6f6b;  /* основен цвят, ползва се за меню и бутони */
+  --cvyat-akcent: #e08e45;   /* акцент, ползва се за цени и hover */
+  --cvyat-tekst: #2a2a2a;    /* цвят на обикновения текст */
+  --cvyat-bjalo: #ffffff;    /* бяло за картите и менюто */
+  --shrift-zaglavie: Georgia, "Times New Roman", serif;     /* за заглавия */
+  --shrift-tekst: "Segoe UI", Tahoma, Verdana, sans-serif;  /* за текст */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--shrift-tekst);
+  color: var(--cvyat-tekst);
+  background-color: var(--cvyat-fon);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--cvyat-bjalo);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  border-bottom: 4px solid var(--cvyat-osnoven);
+}
+ 
+.logo img {
+  display: block;
+  height: 46px;     
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+ 
+nav a {
+  text-decoration: none;
+  color: var(--cvyat-osnoven);
+  font-weight: bold;
+  padding: 6px 4px;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+  color: var(--cvyat-akcent);
+  border-bottom: 3px solid var(--cvyat-akcent);
+}
+
+main {
+  max-width: 980px;
+  margin: 0 auto;       /* центрира съдържанието */
+  padding: 36px 24px;
+}
+ 
+h1 {
+  font-family: var(--shrift-zaglavie);
+  color: var(--cvyat-osnoven);
+  margin-bottom: 16px;
+}
+ 
+h2 {
+  font-family: var(--shrift-zaglavie);
+  color: var(--cvyat-osnoven);
+  margin: 28px 0 14px;
+}
+ 
+p {
+  margin-bottom: 14px;
+}
+
+.hero {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 18px;
+}
+
+.vatreshna-navigacia {
+  background-color: var(--cvyat-bjalo);
+  border: 1px solid #e2ddd4;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 26px;
+}
+ 
+.vatreshna-navigacia a {
+  color: var(--cvyat-osnoven);
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 18px;
+}
+ 
+.vatreshna-navigacia a:hover {
+  color: var(--cvyat-akcent);
+}
+ 
+/* подреждане на артикулите в редица, която сама се пренася на нов ред */
+.artikuli {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.karta {
+  background-color: var(--cvyat-bjalo);
+  border: 1px solid #e2ddd4;
+  border-radius: 10px;
+  width: 280px;
+  padding: 14px;
+  text-align: center;
+  /* плавен преход за hover ефекта по-долу */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+/* DYNAMIKA: при посочване картата леко се повдига и хвърля сянка */
+.karta:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+ 
+.karta img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+ 
+.karta .nomer {
+  color: #8a8a8a;
+  font-size: 0.9em;
+}
+ 
+.karta .cena {
+  color: var(--cvyat-akcent);
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 8px 0;
+}
+ 
+/* бутон Купи вътре в картата */
+.butoni-kupi {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--cvyat-osnoven);
+  color: var(--cvyat-bjalo);
+  padding: 9px 20px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+ 
+.butoni-kupi:hover {
+  background-color: var(--cvyat-akcent);
+}
+ 
+/* връзка нагоре в дъното на всеки раздел */
+.nagore {
+  display: inline-block;
+  margin: 10px 0 30px;
+  color: var(--cvyat-osnoven);
+  text-decoration: none;
+  font-size: 0.95em;
+}
+ 
+.nagore:hover {
+  color: var(--cvyat-akcent);
+}
+
+.forma {
+  background-color: var(--cvyat-bjalo);
+  border: 1px solid #e2ddd4;
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 460px;
+}
+ 
+/* всяко поле е в отделен ред: етикет отгоре, поле отдолу */
+.pole {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+ 
+.pole label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+ 
+.pole input,
+.pole select {
+  padding: 9px 10px;
+  border: 1px solid #c9c2b6;
+  border-radius: 6px;
+  font-family: var(--shrift-tekst);
+  font-size: 1em;
+}
+ 
+/* поле във фокус се откроява */
+.pole input:focus,
+.pole select:focus {
+  outline: none;
+  border-color: var(--cvyat-osnoven);
+}
+ 
+/* грешно попълнено поле, след натиснат бутон, става червено.
+   класът .greshka се добавя с JavaScript */
+.pole input.greshka,
+.pole select.greshka {
+  border-color: #c0392b;
+  background-color: #fdecea;
+}
+ 
+.butoni-poracaj {
+  background-color: var(--cvyat-osnoven);
+  color: var(--cvyat-bjalo);
+  border: none;
+  padding: 11px 26px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+ 
+/* DYNAMIKA: бутонът сменя цвят при посочване */
+.butoni-poracaj:hover {
+  background-color: var(--cvyat-akcent);
+}
+ 
+/* съобщение за успех, скрито по подразбиране, показва се с JavaScript */
+.uspeh {
+  display: none;
+  margin-top: 16px;
+  padding: 12px 14px;
+  background-color: #e7f4ec;
+  border: 1px solid #43a047;
+  border-radius: 6px;
+  color: #1f6b33;
+}
+
+footer {
+  text-align: center;
+  padding: 22px;
+  color: #777;
+  font-size: 0.9em;
+  border-top: 1px solid #e2ddd4;
+  margin-top: 30px;
+}
+
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+  <!-- id="gore" слагаме на body, за да има къде да води линкът "нагоре" -->
+<body id="gore">
+ 
+  <!-- ===== HEADER: същият като на началната страница ===== -->
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.svg" alt="Лого на фирмата"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Начало</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="order.html">Форма за покупка</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+  <main>
+    <h1>Каталог</h1>
+ 
+    <!-- ВЪТРЕШНА НАВИГАЦИЯ: линкове към всеки раздел в самата страница -->
+    <div class="vatreshna-navigacia">
+      Към раздел:
+      <a href="#razdel1">Раздел 1</a>
+      <a href="#razdel2">Раздел 2</a>
+    </div>
+ 
+    <!-- ===== РАЗДЕЛ 1 ===== -->
+    <h2 id="razdel1">Раздел 1</h2>
+    <div class="artikuli">
+ 
+      <!-- ЕДНА КАРТА = ЕДИН АРТИКУЛ. Копирайте този блок за нов артикул. -->
+      <div class="karta">
+        <img src="images/product1.svg" alt="Снимка на артикул 1">
+        <h3>Артикул едно</h3>
+        <p class="nomer">Номер: 001</p>
+        <p class="cena">19.90 лв.</p>
+        <a href="order.html" class="butoni-kupi">Купи</a>
+      </div>
+ 
+      <div class="karta">
+        <img src="images/product2.svg" alt="Снимка на артикул 2">
+        <h3>Артикул две</h3>
+        <p class="nomer">Номер: 002</p>
+        <p class="cena">24.50 лв.</p>
+        <a href="order.html" class="butoni-kupi">Купи</a>
+      </div>
+ 
+    </div>
+    <a href="#gore" class="nagore">Нагоре</a>
+ 
+    <!-- ===== РАЗДЕЛ 2 ===== -->
+    <h2 id="razdel2">Раздел 2</h2>
+    <div class="artikuli">
+ 
+      <div class="karta">
+        <img src="images/product3.svg" alt="Снимка на артикул 3">
+        <h3>Артикул три</h3>
+        <p class="nomer">Номер: 003</p>
+        <p class="cena">12.00 лв.</p>
+        <a href="order.html" class="butoni-kupi">Купи</a>
+      </div>
+ 
+      <div class="karta">
+        <img src="images/product4.svg" alt="Снимка на артикул 4">
+        <h3>Артикул четири</h3>
+        <p class="nomer">Номер: 004</p>
+        <p class="cena">30.00 лв.</p>
+        <a href="order.html" class="butoni-kupi">Купи</a>
+      </div>
+ 
+    </div>
+    <a href="#gore" class="nagore">Нагоре</a>
+ 
+  </main>
+ 
+  <footer>
+    Примерен фирмен сайт, изработен като учебен проект.
+  </footer>
+
+</body>
+</html>
