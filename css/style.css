@@ -1,10 +1,9 @@
-/*Смени цветовете*/
 :root {
-    --cvyat-fon: #f7f5f2;      /* фон на цялата страница */
-  --cvyat-osnoven: #2f6f6b;  /* основен цвят, ползва се за меню и бутони */
-  --cvyat-akcent: #e08e45;   /* акцент, ползва се за цени и hover */
+    --cvyat-fon: #ffffff;      /* фон на цялата страница */
+  --cvyat-osnoven: #2f4d6f;  /* основен цвят, ползва се за меню и бутони */
+  --cvyat-akcent: #e08345;   /* акцент, ползва се за цени и hover */
   --cvyat-tekst: #2a2a2a;    /* цвят на обикновения текст */
-  --cvyat-bjalo: #ffffff;    /* бяло за картите и менюто */
+  --cvyat-bjalo: #f0eded;    /* бяло за картите и менюто */
   --shrift-zaglavie: Georgia, "Times New Roman", serif;     /* за заглавия */
   --shrift-tekst: "Segoe UI", Tahoma, Verdana, sans-serif;  /* за текст */
 }
